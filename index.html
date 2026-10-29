@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="referrer" content="no-referrer">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; connect-src https://ozoulexfbrygiuawwhqn.supabase.co; img-src 'self'; base-uri 'none'; form-action 'none'; object-src 'none'">
+  <meta name="theme-color" content="#123c35">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <title>مهامي | غرفة العمليات</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+<main>
+  <header><span class="badge">غرفة العمليات</span><h1>مهمة جديدة،<br>بخطوة بسيطة.</h1><p>أضف مهامك بأمان إلى النظام الإداري.</p></header>
+  <p id="message" role="status" aria-live="polite">أدخل المفتاح العام ثم سجّل الدخول.</p>
+  <section id="connection"><h2>الاتصال بالمشروع</h2><p>المشروع: <bdi>ozoulexfbrygiuawwhqn</bdi></p>
+    <form id="configForm"><label for="publicKey">المفتاح العام Publishable</label><input id="publicKey" dir="ltr" autocomplete="off" spellcheck="false" placeholder="sb_publishable_…" required><p class="hint">أدخل المفتاح العام فقط. يُرفض أي مفتاح Secret أو service_role.</p><label class="check"><input id="remember" type="checkbox"> تذكّر المفتاح العام على هذا الجهاز</label><button>اعتماد الاتصال</button></form>
+  </section>
+  <section id="login" hidden><h2>تسجيل الدخول</h2><p>استخدم حساب Supabase الذي أُنشئ لك.</p><form id="loginForm"><label for="email">البريد الإلكتروني</label><input id="email" type="email" dir="ltr" autocomplete="username" required><label for="password">كلمة المرور</label><input id="password" type="password" autocomplete="current-password" required><button>تسجيل الدخول</button></form></section>
+  <section id="tasks" hidden><div class="row"><h2>إضافة مهمة</h2><button id="logout" class="secondary" type="button">تسجيل الخروج</button></div><p id="identity" class="hint"></p>
+    <form id="taskForm"><fieldset id="taskFields"><label for="company">الشركة *</label><input id="company" maxlength="200" required><label for="branch">الفرع</label><input id="branch" maxlength="200"><label for="title">عنوان المهمة *</label><input id="title" maxlength="300" required><label for="description">الوصف</label><textarea id="description" rows="4" maxlength="10000"></textarea><div class="grid"><div><label for="priority">الأولوية</label><select id="priority"><option value="low">منخفضة</option><option value="normal" selected>عادية</option><option value="high">عالية</option></select></div><div><label for="due">تاريخ الاستحقاق</label><input id="due" type="date"></div></div><button id="save">إضافة المهمة</button></fieldset></form>
+    <button id="newTask" type="button" class="secondary" hidden>بدء مهمة جديدة</button><p class="hint">لا تغلق الصفحة أثناء الحفظ. بيانات النموذج وجلسة الدخول لا تُحفظ على الجهاز.</p>
+  </section>
+  <button id="reset" class="secondary" type="button" hidden>تغيير إعداد الاتصال</button>
+  <footer>الاتصال بالإنترنت مطلوب · المزامنة مع SQLite المحلي لم تُربط بعد.<br>في Safari: مشاركة ← إضافة إلى الشاشة الرئيسية.</footer>
+</main>
+</body></html>
